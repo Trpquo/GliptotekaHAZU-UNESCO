@@ -4,7 +4,8 @@
   "description": "Virtualna izložba UNESCO-ovih zaštićenih spomenika u Hrvatskoj",
   "main": "./pogon/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel js -d pogon"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
-  }
+  },
+  "dependencies": {}
 }

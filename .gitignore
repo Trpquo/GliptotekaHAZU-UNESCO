@@ -65,4 +65,6 @@ typings/
 *.css.map
 
 node_modules
+js
+.babelrc
 package-lock.json
