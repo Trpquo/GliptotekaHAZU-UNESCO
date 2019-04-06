@@ -1,0 +1,31 @@
+{
+  "name": "gliptotekahazu-unesco",
+  "version": "1.0.0",
+  "description": "Virtualna izložba UNESCO-ovih zaštićenih spomenika u Hrvatskoj",
+  "main": "./pogon/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trpquo/GliptotekaHAZU-UNESCO.git"
+  },
+  "keywords": [
+    "UNESCO",
+    "Croatia",
+    "Glypthoteque",
+    "CAAS",
+    "Gliptoteka",
+    "HAZU"
+  ],
+  "author": "Trpimir Jeronim Ježić",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trpquo/GliptotekaHAZU-UNESCO/issues"
+  },
+  "homepage": "https://github.com/Trpquo/GliptotekaHAZU-UNESCO#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

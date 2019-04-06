@@ -1,0 +1,11 @@
+html, body, header, footer, main, article, section, div, figure, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+}
+
+html {
+  background-image: url("../vizuali/zid.png");
+}
+/*# sourceMappingURL=prijelom.css.map */
