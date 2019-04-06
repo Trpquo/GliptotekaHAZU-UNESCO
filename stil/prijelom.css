@@ -8,4 +8,11 @@ html, body, header, footer, main, article, section, div, figure, p {
 html {
   background-image: url("../vizuali/zid.png");
 }
+
+h1 {
+  color: white;
+  font-size: 3em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
 /*# sourceMappingURL=prijelom.css.map */
