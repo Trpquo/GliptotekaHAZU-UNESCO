@@ -65,6 +65,7 @@ typings/
 *.css.map
 
 node_modules
-js
+src
+pogon
 .babelrc
 package-lock.json

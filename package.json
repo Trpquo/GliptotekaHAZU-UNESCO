@@ -4,8 +4,7 @@
   "description": "Virtualna izložba UNESCO-ovih zaštićenih spomenika u Hrvatskoj",
   "main": "./pogon/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel js -d pogon"
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -27,8 +26,8 @@
   "homepage": "https://github.com/Trpquo/GliptotekaHAZU-UNESCO#readme",
   "devDependencies": {
     "@barba/core": "^2.1.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {}
 }
