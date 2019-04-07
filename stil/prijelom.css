@@ -12,6 +12,7 @@ html {
   background-attachment: fixed;
   height: 100vh;
   --brick-transp: rgba(200, 50, 20, .75);
+  --dark-transp: rgba(20, 20, 20, .96);
   --figure-shadow: 3px 3px 10px  rgba(0,0,0,.2);
 }
 
@@ -22,7 +23,7 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25vw;
-  background-color: rgba(20, 20, 20, 0.97);
+  background-color: var(--dark-transp);
   -webkit-box-shadow: var(--figure-shadow);
           box-shadow: var(--figure-shadow);
 }
@@ -48,22 +49,51 @@ a:hover {
   color: orange;
 }
 
+header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+header nav {
+  height: 100%;
+}
+
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header nav ul li {
-  margin-left: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 0 1em;
+  line-height: 6em;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header nav ul li a:hover {
+  -webkit-box-shadow: var(--figure-shadow);
+          box-shadow: var(--figure-shadow);
 }
 
 header nav ul li .active {
-  background-color: black;
+  background-color: var(--dark-transp);
 }
 
 main {
