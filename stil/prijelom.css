@@ -9,10 +9,29 @@ html {
   background-image: url("../vizuali/zid.png");
 }
 
+body {
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  padding: 5vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 70vh;
+}
+
 h1 {
   color: white;
-  font-size: 3em;
   font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
   font-weight: bold;
+}
+
+.button {
+  padding: 1em;
+  background-color: black;
+  display: inline-block;
 }
 /*# sourceMappingURL=prijelom.css.map */
