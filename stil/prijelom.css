@@ -1,4 +1,4 @@
-html, body, header, footer, main, article, section, div, figure, p, ul, li {
+html, body, header, footer, main, article, section, div, figure, figcaption, p, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11,47 +11,131 @@ html {
   background-image: url("../vizuali/zid.png");
   background-attachment: fixed;
   height: 100vh;
+  font-family: var(--text-face);
+  font-size: 1.7vmax;
+  line-height: 1.8em;
+  scroll-behavior: smooth;
+  /* layout */
+  --header-size: 3rem;
+  --main-size: calc(100vh - var(--header-size) * 2);
+  --gutter: 1.8rem;
+  /* background */
   --brick-transp: rgba(200, 50, 20, .75);
-  --dark-transp: rgba(20, 20, 20, .96);
+  --dark-transp: rgba(20, 20, 20, .90);
   --figure-shadow: 3px 3px 10px  rgba(0,0,0,.2);
+  /* text */
+  --text-face: 'Cairo', sans-serif;
+  --display-face: 'Vesper Libre', serif;
+  --small-caps: 'Marcellus SC';
+  --gigant-face: 'Merriweather';
+  --text-primary-color: white;
+  --text-link: wheat;
+  --text-link-hover: orange;
 }
 
 body {
-  width: 98%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25vw;
   background-color: var(--dark-transp);
   -webkit-box-shadow: var(--figure-shadow);
           box-shadow: var(--figure-shadow);
+  position: relative;
+  z-index: -2;
 }
 
 main, header, footer {
-  padding: 2em;
   position: relative;
 }
 
 header, footer {
-  height: 6em;
+  height: var(--header-size);
   background-color: var(--brick-transp);
 }
 
+main {
+  height: var(--main-size);
+  overflow: auto;
+}
+
 a {
-  color: white;
+  color: var(--text-link);
   text-decoration: none;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 a:hover {
-  color: orange;
+  color: var(--text-link-hover);
 }
 
-header {
-  padding-top: 0;
-  padding-bottom: 0;
+.gigant, main article > h1, #otvorni_izbornik > h1, #rubrike figcaption {
+  font-family: var(--gigant-face);
+  font-weight: 900;
+  font-size: 10vmin;
+  line-height: 1em;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  text-align: left;
+  max-width: 80vmax;
+}
+
+.smallcaps, section.lokacija h1 {
+  font-family: var(--small-caps);
+  font-variant: small-caps;
+}
+
+small {
+  font-size: 1em;
+}
+
+.keyword {
+  color: var(--brick-transp);
+  letter-spacing: .2em;
+}
+
+#otvorni_izbornik {
+  display: block;
+  height: var(--main-size);
+}
+
+#otvorni_izbornik #otvorni_naslov {
+  position: absolute;
+  z-index: 100;
+}
+
+#otvorni_izbornik #rubrike {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5vw;
+  height: calc(100% - var(--header-size));
+  margin: 0 auto;
+  padding: 0 10vw;
+  -webkit-clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
+          clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
+}
+
+#otvorni_izbornik #rubrike figure {
+  -webkit-transform: translateX(2vmax) rotate(190deg);
+          transform: translateX(2vmax) rotate(190deg);
+  background-color: var(--brick-transp);
+}
+
+#otvorni_izbornik #rubrike figcaption {
+  width: 50%;
+  margin: 0;
+  height: calc(100% - var(--gutter));
+  -webkit-writing-mode: tb-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  text-orientation: sideways;
+  text-align: left;
+  font-size: 5vmin;
+  line-height: 0;
+  padding-top: 6vmax;
 }
 
 header nav {
@@ -81,10 +165,10 @@ header nav ul li {
 
 header nav ul li a {
   display: block;
-  padding: 0 1em;
-  line-height: 6em;
-  -webkit-transition: 1s;
-  transition: 1s;
+  padding: 0 .5em;
+  line-height: calc(var(--header-size) + 2px);
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 header nav ul li a:hover {
@@ -96,31 +180,102 @@ header nav ul li .active {
   background-color: var(--dark-transp);
 }
 
-main {
-  height: calc(100vh - 12em);
-  overflow: hidden;
+main article {
+  min-height: 100%;
 }
 
-main article {
+main article > h1 {
+  padding: 0 var(--gutter);
+}
+
+main article section {
+  position: relative;
+  padding: 1px var(--gutter);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  min-height: 100%;
+}
+
+main article section p, main article section dd {
+  margin-bottom: calc(var(--gutter) / 2);
+}
+
+main article section dt {
+  color: var(--brick-transp);
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+main article section:nth-of-type(even) {
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+
+main article section:nth-of-type(even)::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--brick-transp);
+  opacity: .2;
+  -webkit-clip-path: polygon(0 10vw, 100% 0, 100% calc(100% - 10vw), 0% 100%);
+          clip-path: polygon(0 10vw, 100% 0, 100% calc(100% - 10vw), 0% 100%);
 }
 
 main h1 {
   color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
+  font-family: var(--display-face);
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.3em;
+  margin: var(--gutter) 0;
 }
 
-main .button {
+main .button, main button {
   padding: .5em 1em;
   background-color: black;
   display: inline-block;
   color: white;
   text-decoration: none;
+  border: 0;
   border-radius: .5em;
+}
+
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    width: 96%;
+    max-width: 1500px;
+  }
+  .gigant, main article > h1 {
+    max-width: 80vmax;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  -webkit-transition: background 1s;
+  transition: background 1s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brick-transp);
 }
 /*# sourceMappingURL=prijelom.css.map */

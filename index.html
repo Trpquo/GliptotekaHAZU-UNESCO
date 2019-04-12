@@ -1,37 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gliptoteka HAZU - Spomenici u Hrvatskoj pod UNESCO-ovom zaštitom</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="./stil/pisma.css" rel="stylesheet">
     <link href="./stil/prijelom.css" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="./index.html" class="active">Početna</a></li>
-            <li><a href="./unesco.html">UNESCO</a></li>
-            <li><a href="./split.html">Split</a></li>
-            <li><a href="./dubrovnik.html">Dubrovnik</a></li>
-            <li><a href="./trogir.html">Trogir</a></li>
-        </ul>
-    </nav>
-</header>
-<main data-barba="wrapper">
-    <article data-barba="container" data-barba-namespace="home">
-        <h1>UNESCO SPOMENICI U GLIPTOTECI HAZU</h1>
-        <a class="button" href="unesco.html">UNESCO</a>
-    </article>
-</main>  
-<footer>
-    <a class="button" href="index.html">Početna</a>
-</footer>
-    
+    <header>
+        <nav id="navigacija">
+            <ul>
+                <li><a href="./index.html" class="active">Početna</a></li>
+                <!-- <li><a href="./unesco.html">UNESCO</a></li> -->
+                <li><a href="./split.html">Split</a></li>
+                <li><a href="./dubrovnik.html">Dubrovnik</a></li>
+                <li><a href="./trogir.html">Trogir</a></li>
+                <li><a href="./sibenik.html">Šibenik</a></li>
+                <li><a href="./stecci.html">Stećci</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main data-barba="wrapper">
+        <article data-barba="container" data-barba-namespace="home">
+            <section id="otvorni_izbornik">
+                <h1 id="otvorni_naslov">UNESCO spomenici u Gliptoteci HAZU</h1>
+                <div id="rubrike">
+                    <figure>
+                        <img>
+                        <figcaption><a href="./split.html">Split</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img>
+                        <figcaption><a href="./dubrovnik.html">Dubrovnik</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img>
+                        <figcaption><a href="./trogir.html">Trogir</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img>
+                        <figcaption><a href="./sibenik.html">Šibenik</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img>
+                        <figcaption><a href="./stecci.html">Stećci</a></figcaption>
+                    </figure>
+                </div>
+                <button data-href="oIzlozbi">O izložbi</button>
+                <button data-href="oUnescu">UNESCO i Hrvatska</button>
+            </section>
+            <section class="lokacija" id="oIzlozbi">
+                <h1>O izložbi</h1>
+                <p>
+                    Virtualnom izložbom objedinjeni su UNESCO spomenici s <em>Popisa svjetske kulturne baštine</em>
+                    čiji su sadreni odljevi izloženi u stalnim postavima Gliptoteke Hrvatske akademije znanosti i
+                    umjetnosti. Predstavljeni su eksponati spomenika ili njihovi dijelovi iz povijesnih cjelina i
+                    lokaliteta UNESCO kulturne baštine, koji su dio zbirki sadrenih odljeva Gliptoteke (Zbirke
+                    sadrenih odljeva fragmenata hrvatske kulturne baštine od 9. do 15. stoljeća, Zbirke sadrenih
+                    odljeva stećaka i Zbirke Jurja Matejeva Dalmatinca). Kroz pojedine spomenike predstavljeno je
+                    pet od ukupno osam cjelina kulturne baštine s UNESCO <em>Popisa</em>.
+                </p>
+                <p>
+                    Ovom izložbom želimo popularizirati stalne postave Gliptoteke kroz tematiku UNESCO baštine. Želi
+                    se naglasiti vrijednost zbirki odljeva kojima se na jedinstven način objedinjuju najznačajniji
+                    spomenici kiparske baštine uvršteni na UNESCO-ov <em>Popis</em>.
+                </p>
+                <p>
+                    Izložba je priređena povodom Međunarodnog dana muzeja 2019. godine i realizirana je u <a
+                        class="impressum" href="impressum.html">suradnji Gliptoteke HAZU s Hrvatskim studijima i
+                        Grafičkim fakultetom Sveučilišta u Zagrebu</a>.
+                </p>
+            </section>
+            <section class="lokacija" id="oUnescu">
+                <h1>UNESCO i Hrvatska</h1>
+                <p>
+                    <strong class="keyword">UNESCO</strong> (United Nations Educational, Scientific and Cultural
+                    Organization) specijalizirana je agencija UN-a za intelektualna i etička pitanja na području
+                    obrazovanja, znanosti i kulture, osnovana 1945. godine. Programsko područje kulture odnosi se na
+                    očuvanje materijalne (kulturne i prirodne) baštine te podvodne i nematerijalne baštine.
+                </p>
+                <p>
+                    UNESCO <em>Popis svjetske baštine</em> sadrži ukupno 1092 spomenika u 167 država. Preduvjet za
+                    upis lokaliteta na UNESCO <em>Popis svjetske baštine</em> jest jedinstvena univerzalna
+                    vrijednosti kulturnoga dobra te ispunjavanje barem jednog od deset kriterija za upis. Kriteriji
+                    su opisani u “Operativnim smjernicama za provedbu Konvencije o svjetskoj baštini” koje su vodeći
+                    instrument za upravljanje svjetskom baštinom. Uvrštenjem kulturnih dobara na <em>Popis svjetske
+                        baštine</em> ukazuje se na značaj koji baština ima za identitet pojedinog naroda i kulture,
+                    ali i za čovječanstvo u cjelini.
+                </p>
+                <p>
+                    <strong class="keyword">HRVATSKA</strong> na UNESCO Popisu svjetske baštine ima upisana dobra
+                    prema sljedećim kategorijama:
+                </p>
+                <dl>
+                    <dt>Kulturna baština (8):</dt>
+                    <dd>Povijesni kompleks Splita i Dioklecijanova palača, 1979., Gradska jezgra Dubrovnika, 1979.,
+                        Gradska jezgra Trogira, 1997., Eufrazijeva bazilika, 1997., Šibenska katedrala, 2000.,
+                        Starogradsko polje na Hvaru, 2008., Stećci, 2016., Mletačke utvrde od 15. do 17. stoljeća:
+                        Stato da Terra i zapadni Stato da Mar u Šibeniku i Zadru, 2017.</dd>
+                    <dt>Prirodna baština (2):</dt>
+                    <dd>Nacionalni park Plitvička jezera, 1979., Bukove prašume u Karpatima i drugim područjima
+                        Europe, 2017.</dd>
+                    <dt>Nematerijalna svjetska baština u Hrvatskoj (16):</dt>
+                    <dd>Zvončari Kastavštine; Hrvatsko čipkarstvo; Procesija kraljica (Ljelje) u Gorjanima; Hvarska
+                        procesija križa; Festa Svetog Vlaha u Dubrovniku; Proizvodnja drvenih dječjih igračaka
+                        Hrvatskog zagorja; Istarsko dvoglasno pjevanje i sviranje na istarskoj ljestvici, 2009.,
+                        Sinjska alka; Ojkanje - upisano pod nematerijalnu kulturnu baštinu s potrebom za hitnom
+                        zaštitom; Tradicija pravljenja licitara, 2010., Bećarac; Nijemo kolo, plesno kolo Zagore,
+                        2011., Klapsko pjevanje, 2012., Mediteranska prehrana, 2013., Suhozid; Međimurska popevka,
+                        2018.</dd>
+                </dl>
+                <p>
+                    Međunarodna suradnja Republike Hrvatske s UNESCO-om ostvarena je kroz nadležnost <em>Hrvatskog
+                        povjerenstva za UNESCO</em> čiji se rad odvija kroz <em>Službu za UNESCO</em> pri
+                    Ministarstvu kulture Republike Hrvatske.
+                </p>
+                <p>
+                    Ova virtualna izložba obuhvaća pet od osam cjelina kulturne baštine koje se nalaze u stalnim
+                    postavima Gliptoteke HAZU s područja Hrvatske: Povijesni kompleks Splita i Dioklecijanova
+                    palača, Gradska jezgra Dubrovnika, Gradska jezgra Trogira, Šibenska katedrala, stećci te
+                    lokalitet (Radimlja) iz Bosne i Hercegovine.
+                </p>
+            </section>
+
+        </article>
+    </main>
+    <footer>
+        <a class="button" href="index.html">Početna</a>
+    </footer>
+
 
     <!-- <script src="./pogon/barba.umd.js"></script> -->
     <script src="./dist/main.js"></script>
 </body>
+
 </html>
