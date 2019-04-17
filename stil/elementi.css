@@ -184,6 +184,10 @@
   }
 }
 
+[data-barba-namespace="split"] #kazalo {
+  bottom: 10vh;
+}
+
 [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
