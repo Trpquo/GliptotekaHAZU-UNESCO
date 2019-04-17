@@ -69,3 +69,6 @@ src
 pogon
 .babelrc
 package-lock.json
+*.tif
+*.tiff
+thumbs.db

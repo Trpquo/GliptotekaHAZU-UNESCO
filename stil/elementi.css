@@ -1,0 +1,364 @@
+@charset "UTF-8";
+#svg_filteri {
+  display: none;
+}
+
+#otvorni_izbornik {
+  display: block;
+  height: var(--main-size);
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
+#otvorni_izbornik #rubrike {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5vw;
+  height: calc(100% - var(--header-size) - 3rem);
+  margin: 0 auto;
+  padding: 0 10vw;
+  -webkit-clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
+          clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
+}
+
+#otvorni_izbornik #rubrike figure {
+  -webkit-transform: translateX(2vmax) rotate(190deg);
+          transform: translateX(2vmax) rotate(190deg);
+  background-color: var(--brick-transp);
+  overflow: hidden;
+  -webkit-box-shadow: -3px -0.5vw 1vw rgba(0, 0, 0, 0.5);
+          box-shadow: -3px -0.5vw 1vw rgba(0, 0, 0, 0.5);
+}
+
+#otvorni_izbornik #rubrike figcaption {
+  width: 100%;
+  margin: 0;
+  height: calc(100% - var(--gutter));
+  -webkit-writing-mode: tb-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  text-orientation: sideways;
+  text-align: left;
+  font-size: 5vmin;
+  line-height: 0;
+  padding-top: 8vmax;
+  letter-spacing: 0em;
+}
+
+#otvorni_izbornik #rubrike figure img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%) rotate(180deg);
+          transform: translate(-50%) rotate(180deg);
+  height: 100%;
+  z-index: -1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-filter: var(--photo-glypt);
+          filter: var(--photo-glypt);
+  -webkit-animation: zastave-udesno 100s linear infinite alternate;
+          animation: zastave-udesno 100s linear infinite alternate;
+}
+
+#otvorni_izbornik #rubrike figure:hover img {
+  -webkit-filter: var(--photo-dark-gray);
+          filter: var(--photo-dark-gray);
+  -webkit-animation: zastave-ulijevo 50s linear infinite alternate;
+          animation: zastave-ulijevo 50s linear infinite alternate;
+}
+
+#otvorni_izbornik #rubrike a {
+  color: var(--text-secondary-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: font-size 1s ease-in, color 2s, opacity 10s;
+  transition: font-size 1s ease-in, color 2s, opacity 10s;
+}
+
+#otvorni_izbornik #rubrike figure:hover a {
+  color: var(--text-primary-color);
+  font-size: 10rem;
+  opacity: .333;
+  -webkit-transition: font-size 10s ease-in, color 2s, opacity 10s;
+  transition: font-size 10s ease-in, color 2s, opacity 10s;
+}
+
+@-webkit-keyframes zastave-ulijevo {
+  to {
+    -webkit-transform: translate(20%) rotate(180deg);
+            transform: translate(20%) rotate(180deg);
+  }
+}
+
+@keyframes zastave-ulijevo {
+  to {
+    -webkit-transform: translate(20%) rotate(180deg);
+            transform: translate(20%) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes zastave-udesno {
+  to {
+    -webkit-transform: translate(-80%) rotate(180deg);
+            transform: translate(-80%) rotate(180deg);
+  }
+}
+
+@keyframes zastave-udesno {
+  to {
+    -webkit-transform: translate(-80%) rotate(180deg);
+            transform: translate(-80%) rotate(180deg);
+  }
+}
+
+[data-barba-namespace="home"] #grad {
+  position: absolute;
+  padding: 0 var(--gutter);
+  z-index: 100;
+  top: 3vh;
+  font-weight: 900;
+  letter-spacing: .03em;
+}
+
+[data-barba-namespace="home"] #kazalo {
+  top: auto;
+  bottom: 2.5rem;
+  left: var(--gutter);
+  right: var(--gutter);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+}
+
+[data-barba-namespace="home"] #kazalo li {
+  font-size: calc(.5rem + 1vw);
+  letter-spacing: 0.05em;
+  padding: 1em 1.25em .85em;
+  margin: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-secondary-color);
+  background-color: var(--accent);
+}
+
+[data-barba-namespace="home"] #kazalo li:hover {
+  background-color: var(--dark);
+}
+
+[data-barba-namespace="split"] #grad {
+  font-size: 20vw;
+}
+
+[data-barba-namespace="split"] #grad:before, [data-barba-namespace="split"] #grad:after {
+  background-image: url("../slike/SPLIT/rekonstrukcija_dioklicjanove_palace_split.jpg");
+  background-position-x: 10%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="split"] #grad {
+    font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik h1 ol {
+  font-family: var(--small-caps);
+  color: var(--text-primary-color);
+  font-size: 1.3rem;
+  line-height: 1.3em;
+  margin: 1em;
+  list-style-position: inside;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik h1 ol li {
+  margin: .5em;
+}
+
+[data-barba-namespace="dubrovnik"] #grad {
+  font-size: 13.5vw;
+}
+
+[data-barba-namespace="dubrovnik"] #grad:before, [data-barba-namespace="dubrovnik"] #grad:after {
+  background-image: url("../slike/DUBROVNIK/0500.jpg");
+  background-position-x: 30%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="dubrovnik"] #grad {
+    font-size: 13vh;
+  }
+}
+
+[data-barba-namespace="trogir"] #grad {
+  font-size: 20vw;
+}
+
+[data-barba-namespace="trogir"] #grad:before, [data-barba-namespace="trogir"] #grad:after {
+  background-image: url("../slike/TROGIR/TROGIR 1955.jpg");
+  background-position-x: 60%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="trogir"] #grad {
+    font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="sibenik"] #grad {
+  font-size: 19.5vw;
+}
+
+[data-barba-namespace="sibenik"] #grad:before, [data-barba-namespace="sibenik"] #grad:after {
+  background-image: url("../slike/ŠIBENIK/Sibenik_katedrala.jpg");
+  background-position-x: 65%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="sibenik"] #grad {
+    font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="sibenik"] #Jakov3d {
+  position: relative;
+  margin-top: 4rem;
+  width: 30vmax;
+  height: 30vmax;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background-color: var(--dark-seethrough);
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+[data-barba-namespace="sibenik"] #Jakov3d.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70vmax;
+  height: 70vmax;
+  margin: -35vmax;
+  background-color: var(--dark-transp);
+}
+
+[data-barba-namespace="sibenik"] #Jakov3d iframe {
+  display: block;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  -webkit-filter: url("./filteri.svg#chromakey") url("./filteri.svg#glyptho3d");
+          filter: url("./filteri.svg#chromakey") url("./filteri.svg#glyptho3d");
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 98% 70%, 70% 98%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 98% 70%, 70% 98%, 30% 100%, 0% 70%, 0% 30%);
+  background-color: white;
+}
+
+[data-barba-namespace="stecci"] #grad {
+  font-size: 20vw;
+}
+
+[data-barba-namespace="stecci"] #grad:before, [data-barba-namespace="stecci"] #grad:after {
+  background-image: url("../slike/STEĆCI_RADIMLJA/L-R-4-27.png");
+  background-position-x: 60%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="stecci"] #grad {
+    font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="impresuum"] h1 {
+  font-size: 3rem;
+  height: auto;
+  -webkit-clip-path: none;
+          clip-path: none;
+  margin: 0;
+  padding-bottom: .5em;
+  background-color: var(--brick);
+}
+
+[data-barba-namespace="impresuum"] h2, [data-barba-namespace="impresuum"] h3 {
+  font-family: var(--gigant-face);
+}
+
+[data-barba-namespace="impresuum"] .tekst {
+  background-color: var(--dark-transp);
+  padding: var(--gutter);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 150px;
+}
+
+[data-barba-namespace="impresuum"] .tekst > dl {
+  position: relative;
+  z-index: 1;
+}
+
+[data-barba-namespace="impresuum"] .tekst > dl > dt {
+  color: var(--brick);
+  font-size: 2em;
+}
+
+[data-barba-namespace="impresuum"] .tekst dl {
+  max-width: 30rem;
+}
+
+[data-barba-namespace="impresuum"] .tekst dt {
+  font-family: var(--small-caps);
+  color: var(--text-secondary-color);
+  margin-top: 2em;
+}
+
+[data-barba-namespace="impresuum"] .tekst dd dd dt {
+  margin-top: 0;
+}
+
+[data-barba-namespace="impresuum"] .tekst p {
+  margin-top: 2em;
+}
+
+[data-barba-namespace="impresuum"] .tekst .pozadina {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("../slike/TROGIR/IMG_0137.png");
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+  background-position: 110% 60%;
+  opacity: .7;
+  -webkit-filter: url("./filteri.svg#glypthovision");
+          filter: url("./filteri.svg#glypthovision");
+  z-index: 0;
+}
+/*# sourceMappingURL=elementi.css.map */
