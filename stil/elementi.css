@@ -122,7 +122,7 @@
 
 [data-barba-namespace="home"] #grad {
   position: absolute;
-  padding: 0 var(--gutter);
+  padding: 0 var(--page-margins);
   z-index: 100;
   top: 3vh;
   font-weight: 900;
@@ -132,8 +132,8 @@
 [data-barba-namespace="home"] #kazalo {
   top: auto;
   bottom: 2.5rem;
-  left: var(--gutter);
-  right: var(--gutter);
+  left: var(--page-margins);
+  right: var(--page-margins);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,6 +184,89 @@
   }
 }
 
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) {
+    -ms-grid-columns: 2fr 1fr 3fr;
+        grid-template-columns: 2fr 1fr 3fr;
+        grid-template-areas: "n n n" "t . p";
+  }
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst {
+    max-height: 80vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(3) {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "n" "p" "t";
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(3) .pozadina img {
+  top: 50%;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(3) .pozadina figcaption {
+  top: auto;
+  bottom: 10%;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(3) .tekst {
+  max-width: 70%;
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(3) {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "n n" "p t";
+  }
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(4) .popratni {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "p1 p2" "p3 p3" "p4 p4";
+}
+
 [data-barba-namespace="split"] .lokacija .spomenik h1 ol {
   font-family: var(--small-caps);
   color: var(--text-primary-color);
@@ -212,6 +295,85 @@
   }
 }
 
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci {
+  position: absolute;
+  height: 60vh;
+  width: calc(100vw);
+  top: var(--h2-font-size);
+  left: calc(var(--page-margins) * -1.5);
+  z-index: -1;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure a:first-of-type {
+  justify-self: flex-start;
+  margin-right: auto;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure a:last-of-type {
+  justify-self: flex-end;
+  text-align: right;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure img {
+  height: 100%;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure figcaption {
+  position: absolute;
+  bottom: -5rem;
+  left: calc(var(--page-margins) * .5);
+  max-width: 20rem;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
+  margin-top: 50vh;
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci {
+    height: 80vw;
+    top: calc(var(--h2-font-size) * 4);
+  }
+  [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure figcaption {
+    left: 50vw;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
+    margin-top: 80vw;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) {
+        grid-template-areas: "n n n" ". t t" ". p p";
+  }
+  [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="dubrovnik"] .lokacija:nth-of-type(2) .spomenik:first-of-type {
+        grid-template-areas: "n n n" "p p t";
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="dubrovnik"] .lokacija:nth-of-type(2) .spomenik:first-of-type .popratni {
+        grid-template-areas: "p1 p1" "p2 p3" "p4 5";
+  }
+}
+
 [data-barba-namespace="trogir"] #grad {
   font-size: 20vw;
 }
@@ -224,6 +386,93 @@
 @media screen and (min-width: 800px) {
   [data-barba-namespace="trogir"] #grad {
     font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .tekst {
+  max-height: 66.6vh;
+  -webkit-mask-image: var(--gradient-mask);
+          mask-image: var(--gradient-mask);
+}
+
+[data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:first-of-type .tekst {
+    margin-top: 3vh;
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:first-of-type .pozadina figcaption {
+    top: 0;
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(4) h1 {
+    margin-top: 7em;
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(4) .pozadina figcaption {
+    top: 3rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:first-of-type {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: ". . . t t ." ". . . t t .";
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:first-of-type .pozadina figcaption {
+    top: 30vh;
+    left: 20%;
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni, [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "p1 p2";
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(4) .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1";
+  }
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(4) .pozadina figcaption {
+    top: 80vh;
+  }
+}
+
+[data-barba-namespace="trogir"] .lokacija:nth-of-type(3) {
+  overflow: hidden;
+}
+
+[data-barba-namespace="trogir"] .lokacija:nth-of-type(3) .spomenik .pozadina img {
+  margin-top: calc(var(--section-angle) * -2);
+}
+
+[data-barba-namespace="trogir"] .lokacija:nth-of-type(3) .spomenik .pozadina figcaption {
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(3) .spomenik .pozadina figcaption {
+    top: -2rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  [data-barba-namespace="trogir"] .lokacija:nth-of-type(3) .spomenik .popratni {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "p2 p1";
   }
 }
 
@@ -244,14 +493,17 @@
 
 [data-barba-namespace="sibenik"] #Jakov3d {
   position: relative;
-  margin-top: 4rem;
-  width: 30vmax;
-  height: 30vmax;
+  margin: -1rem auto 4rem;
+  width: 60vmin;
+  height: 60vmin;
   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
           clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   background-color: var(--dark-seethrough);
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: j;
 }
 
 [data-barba-namespace="sibenik"] #Jakov3d.active {
@@ -280,6 +532,93 @@
   background-color: white;
 }
 
+[data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov {
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "n n" "t j";
+}
+
+[data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov .tekst {
+  margin-top: 0;
+  max-height: 70vh;
+  -webkit-mask-image: var(--gradient-mask);
+          mask-image: var(--gradient-mask);
+}
+
+[data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov .pozadina img {
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "n" "j" "t";
+  }
+  [data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov #Jakov3d {
+    width: 80vmin;
+    height: 80vmin;
+  }
+  [data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov .pozadina figcaption {
+    top: 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  [data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov .pozadina figcaption {
+    top: 18rem;
+  }
+}
+
+[data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:first-of-type .popratni {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "p1 p2";
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:first-of-type .popratni {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+  }
+}
+
+[data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .pozadina img, [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .pozadina img {
+  top: 1rem;
+}
+
+[data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni figure a, [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni figure a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+[data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni figure a + a, [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni figure a + a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+[data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni figure a + a img, [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni figure a + a img {
+  max-width: none;
+  width: auto;
+  height: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .popratni, [data-barba-namespace="sibenik"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1" "p2" "p3";
+  }
+}
+
 [data-barba-namespace="stecci"] #grad {
   font-size: 20vw;
 }
@@ -292,6 +631,101 @@
 @media screen and (min-width: 800px) {
   [data-barba-namespace="stecci"] #grad {
     font-size: 19vh;
+  }
+}
+
+[data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "n" "t" "p";
+}
+
+[data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .popratni {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "p1 p1 p4" "p2 p3 p4";
+}
+
+[data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .pozadina img {
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .popratni {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "p1 p2" "p3 p4";
+    margin-bottom: 4rem;
+    grid-gap: calc(var(--gutter) * 4) var(--gutter);
+  }
+  [data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .tekst {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type {
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "t p" "t p";
+  }
+  [data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .tekst {
+    margin-top: 0;
+  }
+  [data-barba-namespace="stecci"] .lokacija:first-of-type .spomenik:first-of-type .pozadina figcaption {
+    margin-top: -8rem;
+  }
+}
+
+[data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) {
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "n p" "t p";
+  -ms-grid-rows: 10rem auto;
+      grid-template-rows: 10rem auto;
+}
+
+[data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni figure a, [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni figure a + a {
+  position: static;
+  opacity: 1;
+  margin: .25rem;
+}
+
+@media screen and (max-width: 1280px) {
+  [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni figure {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "n" "t" "p";
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1" "p2" "p3";
   }
 }
 
@@ -311,10 +745,14 @@
 
 [data-barba-namespace="impresuum"] .tekst {
   background-color: var(--dark-transp);
-  padding: var(--gutter);
+  padding: var(--page-margins);
   position: relative;
   overflow: hidden;
   padding-bottom: 150px;
+}
+
+[data-barba-namespace="impresuum"] .tekst ul {
+  list-style-type: circle;
 }
 
 [data-barba-namespace="impresuum"] .tekst > dl {
