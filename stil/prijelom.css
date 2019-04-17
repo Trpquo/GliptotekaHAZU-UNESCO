@@ -29,6 +29,7 @@ html {
   --main-size: calc(100vh - var(--header-size) - var(--footer-size));
   --gutter: .8rem;
   --page-margins: calc(var(--gutter) * 3);
+  --body-width: 100%;
   --max-body-width: 1500px;
   --section-angle: 7vw;
   --title-clip: polygon(0 0, 100% 0, 100% calc(100% - var(--section-angle)), 0% 100%);
@@ -118,7 +119,8 @@ html {
 }
 
 body {
-  width: 100%;
+  width: var(--body-width);
+  max-width: var(--max-body-width);
   height: 100%;
   margin: 0 auto;
   color: var(--text-primary-color);
@@ -127,33 +129,37 @@ body {
           box-shadow: var(--display-shadow);
   position: relative;
   z-index: -2;
-  max-width: var(--max-body-width);
 }
 
 @media screen and (min-width: 800px) {
   body {
-    width: 96%;
+    --body-width: 96%;
   }
 }
 
-main, header, footer {
-  position: relative;
-}
-
 header, footer {
+  position: fixed;
   height: var(--header-size);
   background-color: var(--brick);
-  z-index: 3000;
+  width: var(--body-width);
+  max-width: var(--max-body-width);
+  z-index: 9000;
 }
 
 main {
+  position: fixed;
+  top: var(--header-size);
   height: var(--main-size);
-  overflow: auto;
+  width: var(--body-width);
+  max-width: var(--max-body-width);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 footer {
   height: var(--footer-size);
   background-color: var(--dark);
+  bottom: 0;
 }
 
 a {
@@ -245,6 +251,10 @@ img.pozadina {
   z-index: 20000;
 }
 
+header {
+  top: 0;
+}
+
 header nav {
   height: 100%;
 }
@@ -313,7 +323,7 @@ header nav ul li a.active {
 
 #kazalo {
   position: absolute;
-  top: 50vw;
+  bottom: 15vh;
   right: 5%;
   left: 5%;
   z-index: 1000;
@@ -321,8 +331,8 @@ header nav ul li a.active {
   -webkit-transition: .5s;
   transition: .5s;
   opacity: 0;
-  -webkit-animation: kazalo 2s ease-in forwards;
-          animation: kazalo 2s ease-in forwards;
+  -webkit-animation: kazalo 2s ease-in .25s forwards;
+          animation: kazalo 2s ease-in .25s forwards;
 }
 
 @-webkit-keyframes kazalo {
@@ -369,13 +379,9 @@ header nav ul li a.active {
 
 @media screen and (min-width: 800px) {
   #kazalo {
-    top: 40vh;
+    bottom: 20vh;
     left: 50%;
   }
-}
-
-main {
-  overflow-x: hidden;
 }
 
 main article {
@@ -398,7 +404,7 @@ main article > h1 {
   max-width: 100% !important;
   padding: 0 var(--page-margins);
   position: relative;
-  z-index: 100;
+  z-index: 3;
   color: var(--text-secondary-color);
   opacity: .85;
   mix-blend-mode: soft-light;
@@ -427,16 +433,23 @@ main article > h1::before, main article > h1::after {
   z-index: -200;
   -webkit-filter: var(--photo-dark-gray);
           filter: var(--photo-dark-gray);
+  -webkit-animation: none;
+          animation: none;
+  opacity: 1;
 }
 
 main article > h1::after {
   z-index: -199;
   -webkit-filter: var(--photo-glypt);
           filter: var(--photo-glypt);
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
-main article > h1:hover::after {
+main article > h1:active::after {
   opacity: 0;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 main article .cutout {
