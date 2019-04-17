@@ -280,6 +280,29 @@
   margin: .5em;
 }
 
+[data-barba-namespace="split"] .lokacija:nth-of-type(1) .spomenik .tekst,
+[data-barba-namespace="split"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(2) .tekst,
+[data-barba-namespace="split"] .lokacija:nth-of-type(3) .spomenik:nth-of-type(1) .tekst {
+  max-height: 70vh;
+  -webkit-mask-image: var(--gradient-mask);
+          mask-image: var(--gradient-mask);
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="split"] .lokacija:nth-of-type(2) .spomenik:nth-of-type(3) .popratni, [data-barba-namespace="split"] .lokacija:nth-of-type(3) .spomenik .popratni {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1";
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  [data-barba-namespace="split"] .lokacija:nth-of-type(3) .spomenik {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 [data-barba-namespace="dubrovnik"] #grad {
   font-size: 13.5vw;
 }
@@ -301,7 +324,7 @@
   width: calc(100vw);
   top: var(--h2-font-size);
   left: calc(var(--page-margins) * -1.5);
-  z-index: -1;
+  z-index: 0;
 }
 
 [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure {
@@ -334,8 +357,17 @@
   max-width: 20rem;
 }
 
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure figcaption {
+  z-index: 3;
+  max-width: 25vw;
+}
+
 [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
   margin-top: 50vh;
+}
+
+[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .popratni {
+  z-index: -1;
 }
 
 @media screen and (max-width: 800px) {
@@ -347,6 +379,7 @@
     left: 50vw;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    max-width: none;
   }
   [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
     margin-top: 80vw;
@@ -355,7 +388,11 @@
 
 @media screen and (min-width: 1280px) {
   [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) {
-        grid-template-areas: "n n n" ". t t" ". p p";
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "n n n n n n" ". t t t t ." ". p p p p .";
+    -ms-grid-rows: calc(var(--h1-font-size) * 2) 1fr 2fr;
+        grid-template-rows: calc(var(--h1-font-size) * 2) 1fr 2fr;
   }
   [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
     margin-top: 0;
@@ -546,6 +583,7 @@
 }
 
 [data-barba-namespace="sibenik"] .lokacija:first-of-type #svJakov .pozadina img {
+  opacity: .3;
   z-index: -1;
 }
 
@@ -678,8 +716,8 @@
 }
 
 [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) {
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
       grid-template-areas: "n p" "t p";
   -ms-grid-rows: 10rem auto;
       grid-template-rows: 10rem auto;
@@ -698,6 +736,10 @@
 }
 
 @media screen and (max-width: 1280px) {
+  [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
   [data-barba-namespace="stecci"] .lokacija:last-of-type .spomenik:nth-child(n) .popratni figure {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
