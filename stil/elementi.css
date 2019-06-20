@@ -8,19 +8,29 @@
   height: var(--main-size);
   -webkit-clip-path: none;
           clip-path: none;
+  background-image: url("../slike/detalj-ulaza.png");
+  background-repeat: no-repeat;
+  background-size: 110vmax auto;
+  background-position: 50% 80%;
+}
+
+#otvorni_izbornik #grad {
+  text-shadow: 0.5rem 0.5rem 1rem rgba(var(--dark-brick-values), 0.666);
 }
 
 #otvorni_izbornik #rubrike {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1.5vw;
-  height: calc(100% - var(--header-size) - 3rem);
-  margin: 0 auto;
+  -ms-grid-columns: (minmax(50px, 135px))[5];
+      grid-template-columns: repeat(5, minmax(50px, 135px));
+  grid-gap: calc(.75rem + .5vw);
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  height: calc(100% - var(--header-size) - 1rem);
   padding: 0 10vw;
-  -webkit-clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
-          clip-path: polygon(0 5vw, 100% 5vw, 100% calc(100% - 5vw), 0% calc(100% - 5vw));
+  -webkit-clip-path: polygon(0 5vmin, 100% 5vmin, 100% calc(100% - 5vmin), 0% calc(100% - 5vmin));
+          clip-path: polygon(0 5vmin, 100% 5vmin, 100% calc(100% - 5vmin), 0% calc(100% - 5vmin));
 }
 
 #otvorni_izbornik #rubrike figure {
@@ -30,21 +40,6 @@
   overflow: hidden;
   -webkit-box-shadow: -3px -0.5vw 1vw rgba(0, 0, 0, 0.5);
           box-shadow: -3px -0.5vw 1vw rgba(0, 0, 0, 0.5);
-}
-
-#otvorni_izbornik #rubrike figcaption {
-  width: 100%;
-  margin: 0;
-  height: calc(100% - var(--gutter));
-  -webkit-writing-mode: tb-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: tb-rl;
-  text-orientation: sideways;
-  text-align: left;
-  font-size: 5vmin;
-  line-height: 0;
-  padding-top: 8vmax;
-  letter-spacing: 0em;
 }
 
 #otvorni_izbornik #rubrike figure img {
@@ -70,7 +65,22 @@
           animation: zastave-ulijevo 50s linear infinite alternate;
 }
 
-#otvorni_izbornik #rubrike a {
+#otvorni_izbornik #rubrike figure figcaption {
+  width: 100%;
+  margin: 0;
+  height: calc(100% - var(--gutter));
+  -webkit-writing-mode: tb-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  text-orientation: sideways;
+  text-align: left;
+  font-size: 5vmin;
+  line-height: 0;
+  padding-top: 8vmax;
+  letter-spacing: 0em;
+}
+
+#otvorni_izbornik #rubrike figure a {
   color: var(--text-secondary-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,7 +154,7 @@
 }
 
 [data-barba-namespace="home"] #kazalo li {
-  font-size: calc(.5rem + 1vw);
+  font-size: calc(.75rem + .25vw);
   letter-spacing: 0.05em;
   padding: 1em 1.25em .85em;
   margin: 0 1em;
@@ -201,9 +211,13 @@
 
 [data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst > * {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin: 1rem;
+}
+
+[data-barba-namespace="split"] .lokacija .spomenik:nth-of-type(2) .tekst figure {
+  margin-bottom: 4rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -325,7 +339,7 @@
 [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci {
   position: absolute;
   height: 60vh;
-  width: calc(100vw);
+  width: calc(100% + var(--page-margins)*3);
   top: var(--h2-font-size);
   left: calc(var(--page-margins) * -1.5);
   z-index: 0;
@@ -358,12 +372,8 @@
   position: absolute;
   bottom: -5rem;
   left: calc(var(--page-margins) * .5);
-  max-width: 20rem;
-}
-
-[data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) #zelenci figure figcaption {
+  max-width: 20vw;
   z-index: 3;
-  max-width: 25vw;
 }
 
 [data-barba-namespace="dubrovnik"] .lokacija:first-of-type .spomenik:nth-of-type(2) .tekst {
@@ -545,6 +555,10 @@
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: j;
+}
+
+[data-barba-namespace="sibenik"] #Jakov3d .tekst figure {
+  margin-bottom: 4rem;
 }
 
 [data-barba-namespace="sibenik"] #Jakov3d.active {
