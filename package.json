@@ -28,7 +28,7 @@
     "@barba/core": "^2.1.0",
     "gsap": "^2.1.2",
     "imports-loader": "^0.8.0",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "scrollmagic": "^2.0.6",
     "smartphoto": "^1.4.3",
     "webpack": "^4.29.6",
