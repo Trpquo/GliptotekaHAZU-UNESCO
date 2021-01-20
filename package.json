@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Trpquo/GliptotekaHAZU-UNESCO#readme",
   "devDependencies": {
     "@barba/core": "^2.1.0",
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "imports-loader": "^0.8.0",
     "jquery": "^3.4.0",
     "scrollmagic": "^2.0.6",
